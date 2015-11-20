@@ -15,13 +15,18 @@ LOG = logging.getLogger("log")
 #config log level for logger
 LOG.setLevel(logging.DEBUG)
 
+#create handler for logger
 logfile = logging.FileHandler('./log.txt')
+
+#setup log level for handler
 logfile.setLevel(logging.DEBUG)
+
+#define log format and setup for handler
 formatter = logging.Formatter('%(asctime)s-[%(name)s]-%(levelname)s-%(message)s')
 logfile.setFormatter(formatter)
 
+#register handler for logger
 LOG.addHandler(logfile)
+
+#example to use logger
 LOG.debug("hello world") 
-
-
-
